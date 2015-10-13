@@ -460,13 +460,13 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
 }
 
 - (void)hideMenuitems {
-    for(AwesomeMenuItem *menuItem in self.menusArray) {
+    for(AwesomeMenuItem *menuItem in self.menuItems) {
         [menuItem setHidden:YES];
     }
 }
 
 - (void)showMenuitems {
-    for(AwesomeMenuItem *menuItem in self.menusArray) {
+    for(AwesomeMenuItem *menuItem in self.menuItems) {
         [menuItem setHidden:NO];
     }
 }
