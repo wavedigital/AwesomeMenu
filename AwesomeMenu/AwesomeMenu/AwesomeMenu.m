@@ -313,6 +313,8 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
 - (void)_expandAnimation
 {
 	
+    [self showMenuitems];
+
     if (_flag == [self.menuItems count])
     {
         _isAnimating = NO;
@@ -360,6 +362,8 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
 
 - (void)_closeAnimation
 {
+    [self performSelector:@selector(hideMenuitems) withObject:nil afterDelay:0.55f];
+
     if (_flag == -1)
     {
         _isAnimating = NO;
@@ -455,5 +459,16 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
     return animationgroup;
 }
 
+- (void)hideMenuitems {
+    for(AwesomeMenuItem *menuItem in self.menusArray) {
+        [menuItem setHidden:YES];
+    }
+}
+
+- (void)showMenuitems {
+    for(AwesomeMenuItem *menuItem in self.menusArray) {
+        [menuItem setHidden:NO];
+    }
+}
 
 @end
