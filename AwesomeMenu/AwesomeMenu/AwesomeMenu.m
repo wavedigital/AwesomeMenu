@@ -198,6 +198,8 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
     {
         [_delegate awesomeMenu:self didSelectIndex:item.tag - 1000];
     }
+
+    [self performSelector:@selector(hideMenuitems) withObject:nil afterDelay:0.50f];
 }
 
 #pragma mark - Instance methods
