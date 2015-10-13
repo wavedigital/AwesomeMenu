@@ -312,8 +312,8 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
 
 - (void)_expandAnimation
 {
-	
-    [self showMenuitems];
+
+    [self performSelector:@selector(showMenuitems) withObject:nil afterDelay:0.1f];
 
     if (_flag == [self.menuItems count])
     {
